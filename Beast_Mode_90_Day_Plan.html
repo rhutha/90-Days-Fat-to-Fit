@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Beast Mode 90">
+<meta name="theme-color" content="#12b5a5">
+<title>Beast Mode: 90-Day Athletic Physique Builder</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --teal:#12b5a5;--teal-dark:#0d8c80;--coral:#ff6f61;--coral-soft:#ffb3ab;
+  --peach:#fff1ec;--mint:#e8f8f5;--sun:#ffcf5c;--ink:#243b55;--ink-soft:#5b6b7d;
+  --lav:#eef1ff;--grape:#7b6cf6;--bg:#fbfcfe;--card:#ffffff;--line:#eef2f6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px 60px}
+
+/* HERO / LOGO */
+.hero{background:linear-gradient(135deg,var(--teal) 0%,var(--grape) 100%);color:#fff;border-radius:0 0 32px 32px;padding:48px 28px 40px;text-align:center;box-shadow:0 12px 30px rgba(18,181,165,.25);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero::after{content:'';position:absolute;bottom:-30px;left:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.04)}
+.logo{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:10px 20px;border-radius:100px;margin-bottom:16px;backdrop-filter:blur(6px)}
+.logo i{font-size:22px;color:var(--sun)}
+.logo span{font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{font-size:36px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+.hero p{font-size:15px;opacity:.92;margin-top:10px;max-width:660px;margin-left:auto;margin-right:auto}
+.hero .tagline{display:inline-block;margin-top:16px;font-size:13px;font-weight:700;padding:7px 18px;border-radius:100px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:12px;margin:-24px auto 0;max-width:1000px;position:relative;z-index:2}
+.stat{background:var(--card);border-radius:16px;padding:14px;text-align:center;box-shadow:0 6px 18px rgba(36,59,85,.08);border:1px solid var(--line)}
+.stat i{font-size:18px;color:var(--teal)}
+.stat .n{font-size:20px;font-weight:800;margin-top:4px}
+.stat .l{font-size:10px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+.sec{margin-top:40px}
+.sec-h{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.sec-h .dot{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;color:#fff;font-size:18px;flex:none}
+.sec-h h2{font-size:24px;font-weight:800}
+.sec-h .sub{color:var(--ink-soft);font-size:13px}
+.bg-teal{background:var(--teal)}.bg-coral{background:var(--coral)}.bg-grape{background:var(--grape)}.bg-sun{background:var(--sun)}
+h2 .hl{color:var(--coral)}
+
+.note{background:var(--peach);border-left:5px solid var(--coral);border-radius:12px;padding:14px 18px;margin-top:14px;color:#8a3b32;font-size:13.5px}
+.note b{color:#c23b2c}
+
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13px;display:flex;align-items:center;gap:8px;box-shadow:0 3px 10px rgba(36,59,85,.04)}
+.pill i{color:var(--coral);font-size:14px}
+
+/* TARGET MUSCLE CUTS */
+.cuts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.cut{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.cut i{color:var(--grape);font-size:14px}
+
+/* WEEK SCHEDULE */
+.week{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:14px}
+.day{border-radius:14px;padding:14px;color:#fff;min-height:110px;display:flex;flex-direction:column}
+.day .d{font-size:11px;text-transform:uppercase;letter-spacing:.08em;opacity:.9}
+.day .t{font-size:15px;font-weight:800;margin-top:3px}
+.day .x{font-size:11px;margin-top:auto;opacity:.9}
+.d1{background:linear-gradient(135deg,#12b5a5,#0d8c80)}
+.d2{background:linear-gradient(135deg,#7b6cf6,#5a48e0)}
+.d3{background:linear-gradient(135deg,#ff6f61,#e8503f)}
+.d4{background:linear-gradient(135deg,#ffb020,#f59300)}
+.d5{background:linear-gradient(135deg,#12b5a5,#0d8c80)}
+.d6{background:linear-gradient(135deg,#7b6cf6,#5a48e0)}
+.d7{background:linear-gradient(135deg,#9aa7b5,#7a8797)}
+
+/* DAY CARDS */
+.day-card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 8px 22px rgba(36,59,85,.08);border:1px solid var(--line);margin-top:18px}
+.day-hdr{padding:18px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;color:#fff}
+.day-1 .day-hdr{background:linear-gradient(135deg,#12b5a5,#0d8c80)}
+.day-2 .day-hdr{background:linear-gradient(135deg,#7b6cf6,#5a48e0)}
+.day-3 .day-hdr{background:linear-gradient(135deg,#ff6f61,#e8503f)}
+.day-4 .day-hdr{background:linear-gradient(135deg,#ffb020,#f59300)}
+.day-5 .day-hdr{background:linear-gradient(135deg,#12b5a5,#0d8c80)}
+.day-6 .day-hdr{background:linear-gradient(135deg,#7b6cf6,#5a48e0)}
+.day-hdr h3{font-size:18px;font-weight:800;display:flex;align-items:center;gap:8px}
+.day-badge{font-size:11px;font-weight:700;padding:4px 11px;border-radius:100px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.28)}
+.day-body{padding:16px 20px 22px}
+.mg{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:4px 11px;border-radius:7px;margin:14px 0 8px;color:#fff}
+.mg-chest{background:#ff8a5c}.mg-sh{background:#ff6f61}.mg-tri{background:#7b6cf6}
+.mg-back{background:#5a48e0}.mg-trap{background:#0d8c80}.mg-bi{background:#f59300}
+.mg-fore{background:#9a7bff}.mg-quad{background:#12b5a5}.mg-ham{background:#0d8c80}
+.mg-calf{background:#9a7bff}.mg-core{background:#e8503f}.mg-cardio{background:#12b5a5}
+.mg-warm{background:#9aa7b5}
+.ex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.ex{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 42px;position:relative}
+.ex-full{grid-column:1/-1}
+.ex-num{position:absolute;left:10px;top:12px;width:22px;height:22px;border-radius:7px;background:var(--teal);color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center}
+.ex-s .ex-num{background:var(--teal)}.ex-c .ex-num{background:var(--coral)}.ex-co .ex-num{background:var(--grape)}.ex-w .ex-num{background:#9aa7b5}
+.ex h4{font-size:14px;font-weight:700}
+.ex .sets{font-family:monospace;font-size:11.5px;font-weight:700;color:var(--coral);margin-top:3px}
+.ex .equip{display:inline-block;font-size:10px;font-weight:600;color:var(--teal-dark);background:var(--mint);padding:2px 8px;border-radius:100px;margin-top:5px}
+.ex .tip{font-size:11.5px;color:var(--ink-soft);margin-top:4px}
+
+/* DIET */
+.meal{display:grid;grid-template-columns:100px 1fr;gap:0;background:var(--card);border-radius:14px;overflow:hidden;margin-top:12px;box-shadow:0 5px 14px rgba(36,59,85,.05);border:1px solid var(--line)}
+.meal .time{background:linear-gradient(160deg,var(--teal),var(--teal-dark));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center}
+.meal .time i{font-size:18px}.meal .time .tt{font-size:10px;margin-top:5px;font-weight:700}
+.meal .c{padding:12px 16px}
+.meal .c h4{font-size:14.5px}.meal .c p{font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+.meal .c .macro{font-size:11px;color:var(--teal-dark);font-weight:700;margin-top:5px}
+
+.macros{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-top:14px}
+.mc{border-radius:16px;padding:18px;color:#fff;text-align:center}
+.mc.cal{background:linear-gradient(150deg,#ff9a76,#ff6f61)}
+.mc.pro{background:linear-gradient(150deg,#12b5a5,#0d8c80)}
+.mc.carb{background:linear-gradient(150deg,#ffb020,#f59300)}
+.mc.fat{background:linear-gradient(150deg,#8b7bff,#6a55ec)}
+.mc.fib{background:linear-gradient(150deg,#9aa7b5,#7a8797)}
+.mc .big{font-size:24px;font-weight:800}
+.mc .lbl{font-size:12px;opacity:.92;margin-top:2px}
+
+/* PROTOCOL COLUMNS */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}
+.col{border-radius:18px;padding:20px;color:#fff}
+.col.chol{background:linear-gradient(150deg,#ff9a76,#ff6f61)}
+.col.skin{background:linear-gradient(150deg,#8b7bff,#6a55ec)}
+.col.supp{background:linear-gradient(150deg,#12b5a5,#0d8c80)}
+.col h3{font-size:17px;display:flex;align-items:center;gap:8px;font-weight:800}
+.col ul{list-style:none;margin-top:10px}
+.col li{padding:5px 0 5px 20px;position:relative;font-size:13px;opacity:.95}
+.col li::before{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;position:absolute;left:0;top:6px;font-size:10px}
+
+/* TIMELINE */
+.timeline{margin-top:14px}
+.tl-row{display:grid;grid-template-columns:70px 80px 1fr;gap:8px;align-items:center;padding:10px 14px;border-radius:12px;margin-top:6px;background:var(--card);border:1px solid var(--line)}
+.tl-row .wk{font-size:12px;font-weight:800;color:var(--teal)}
+.tl-row .wt{font-size:15px;font-weight:800;color:var(--ink)}
+.tl-row .desc{font-size:12px;color:var(--ink-soft)}
+
+/* RULES */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.rule{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:0 4px 12px rgba(36,59,85,.04)}
+.rule .rn{font-size:20px;font-weight:800;color:var(--grape);line-height:1}
+.rule .rt{font-size:13px;font-weight:700;margin-top:4px;color:var(--ink)}
+.rule .rd{font-size:11.5px;color:var(--ink-soft);margin-top:3px}
+
+/* FOOTER */
+.foot{margin-top:40px;background:var(--ink);color:#cdd6e0;border-radius:20px;padding:26px 28px;text-align:center}
+.foot b{color:#fff}
+.foot .quote{font-style:italic;font-size:14px;color:var(--sun);margin-top:12px}
+.foot .disc{font-size:11px;color:#8a9bb0;margin-top:12px}
+
+/* MOBILE */
+img{max-width:100%;height:auto}
+@media(max-width:640px){
+  .wrap{padding:0 12px 48px}
+  .hero{padding:34px 16px 30px;border-radius:0 0 24px 24px}
+  .hero h1{font-size:26px}
+  .logo span{font-size:12px}
+  .stats{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:-18px}
+  .stat{padding:10px}.stat .n{font-size:16px}
+  .sec{margin-top:30px}
+  .sec-h h2{font-size:19px}
+  .week{grid-template-columns:repeat(2,1fr)}
+  .day{min-height:auto;padding:12px}
+  .cuts{grid-template-columns:repeat(2,1fr)}
+  .pills .pill{flex:1 1 100%}
+  .day-hdr{padding:14px 16px}
+  .day-hdr h3{font-size:15px}
+  .day-body{padding:12px 14px 16px}
+  .ex-grid{grid-template-columns:1fr}
+  .ex{padding:10px 12px 10px 38px}
+  .macros{grid-template-columns:repeat(2,1fr)}
+  .meal{grid-template-columns:80px 1fr}
+  .cols{grid-template-columns:1fr}
+  .rules{grid-template-columns:1fr}
+  .timeline .tl-row{grid-template-columns:60px 70px 1fr}
+  .foot{padding:20px 16px;border-radius:16px}
+}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="logo"><i class="fa-solid fa-fire-flame-curved"></i><span>Beast Mode</span></div>
+  <h1>90-Day Athletic Physique Builder</h1>
+  <p>Advanced push/pull/legs program to burn fat, build visible muscle, and carve an athletic movie-star physique. Home only, small space, vegetarian + eggs.</p>
+  <div class="tagline"><i class="fa-solid fa-bolt"></i>&nbsp; Veins. Cuts. V-Taper. 100% Commitment.</div>
+</div>
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><i class="fa-solid fa-arrow-down"></i><div class="n">85&rarr;70</div><div class="l">Weight kg</div></div>
+    <div class="stat"><i class="fa-solid fa-percent"></i><div class="n">~12%</div><div class="l">Target BF</div></div>
+    <div class="stat"><i class="fa-solid fa-drumstick-bite"></i><div class="n">120g</div><div class="l">Protein/Day</div></div>
+    <div class="stat"><i class="fa-solid fa-calendar-check"></i><div class="n">6 Days</div><div class="l">Training</div></div>
+    <div class="stat"><i class="fa-solid fa-clock"></i><div class="n">60-75m</div><div class="l">Per Session</div></div>
+    <div class="stat"><i class="fa-solid fa-fire"></i><div class="n">1650</div><div class="l">Calories</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><div class="dot bg-grape"><i class="fa-solid fa-crosshairs"></i></div>
+      <div><h2>Target Muscle <span class="hl">Cuts</span></h2><div class="sub">Every body part carved and visible</div></div>
+    </div>
+    <div class="cuts">
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Round 3D Shoulders</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> V-Taper Back</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Peaked Biceps</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Horseshoe Triceps</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Thick Traps</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> 6-Pack + V-Cut Abs</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Carved Chest</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Round Glutes</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Quad Sweep</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Hamstring Cut</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Forearm Veins</div>
+      <div class="cut"><i class="fa-solid fa-circle-dot"></i> Serratus + Obliques</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><div class="dot bg-coral"><i class="fa-solid fa-calendar-week"></i></div>
+      <div><h2>Push/Pull/Legs <span class="hl">Split</span></h2><div class="sub">2x each muscle group per week. 6 training days, 1 rest.</div></div>
+    </div>
+    <div class="week">
+      <div class="day d1"><div class="d">Mon</div><div class="t">PUSH</div><div class="x">Chest + Shoulder + Tri</div></div>
+      <div class="day d2"><div class="d">Tue</div><div class="t">PULL</div><div class="x">Back + Bicep + Trap</div></div>
+      <div class="day d3"><div class="d">Wed</div><div class="t">LEGS+ABS</div><div class="x">Quad + Ham + Glute + V-Cut</div></div>
+      <div class="day d4"><div class="d">Thu</div><div class="t">PUSH</div><div class="x">Shoulder Focus + Tri</div></div>
+      <div class="day d5"><div class="d">Fri</div><div class="t">PULL</div><div class="x">Back Width + Arms Pump</div></div>
+      <div class="day d6"><div class="d">Sat</div><div class="t">LEGS+HIIT</div><div class="x">Heavy Lower + Fat Burn</div></div>
+      <div class="day d7"><div class="d">Sun</div><div class="t">REST</div><div class="x">Recovery + Walk</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><div class="dot bg-teal"><i class="fa-solid fa-dumbbell"></i></div>
+      <div><h2>Full <span class="hl">Day-by-Day</span> Workouts</h2><div class="sub">Warm up 5 min before. Rest 30-45 sec between sets. Train to failure on last sets.</div></div>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-card day-1">
+      <div class="day-hdr"><h3><i class="fa-solid fa-fire"></i> Day 1 - PUSH</h3><span class="day-badge">Chest + Shoulders + Triceps</span></div>
+      <div class="day-body">
+        <span class="mg mg-warm">Warm-Up</span>
+        <div class="ex-grid">
+          <div class="ex ex-w ex-full"><span class="ex-num">W</span><h4>Band Pull-Aparts + Arm Circles + Push-Up Hold</h4><div class="sets">2 rounds x 15 reps each</div><span class="equip">Resistance Band</span></div>
+        </div>
+        <span class="mg mg-chest">Chest - Separation Lines</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">1</span><h4>DB Floor Press (Squeeze Top)</h4><div class="sets">4x12-15 | Tempo: 3-1-2-2</div><span class="equip">8 kg DBs + Mat</span><div class="tip">Squeeze 2 sec at top. Last set: drop to 3kg, failure.</div></div>
+          <div class="ex ex-s"><span class="ex-num">2</span><h4>Decline Push-Ups (Feet on Block)</h4><div class="sets">4x15-20 | 3 sec negative</div><span class="equip">Yoga Block + Mat</span><div class="tip">Upper chest focus. Failure then knee push-ups.</div></div>
+          <div class="ex ex-s"><span class="ex-num">3</span><h4>DB Fly (Floor) - Deep Stretch</h4><div class="sets">3x15 | 4 sec stretch bottom</div><span class="equip">8 kg DBs + Mat</span><div class="tip">Deep stretch = chest separation line.</div></div>
+          <div class="ex ex-s"><span class="ex-num">3B</span><h4>SUPERSET: Diamond Push-Ups</h4><div class="sets">3x12 (immediately after flyes)</div><span class="equip">Bodyweight</span><div class="tip">Inner chest + triceps. No rest from flyes.</div></div>
+        </div>
+        <span class="mg mg-sh">Shoulders - 3D Round Caps</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">4</span><h4>Seated DB Shoulder Press</h4><div class="sets">4x10-12 | Strict, no momentum</div><span class="equip">8 kg DBs + Block (seat)</span><div class="tip">Pause at top. Front delt mass builder.</div></div>
+          <div class="ex ex-s"><span class="ex-num">5</span><h4>Lateral Raise (3 Angles)</h4><div class="sets">3x12 each angle = 36/set</div><span class="equip">3 kg DBs</span><div class="tip">Side > Front > Bent Rear. No rest. 360&deg; round.</div></div>
+          <div class="ex ex-s"><span class="ex-num">6</span><h4>Band Face Pull + Ext Rotation</h4><div class="sets">4x20 | Squeeze 2 sec</div><span class="equip">Resistance Band (door)</span><div class="tip">Rear delt pop. Round shoulder from all angles.</div></div>
+          <div class="ex ex-s"><span class="ex-num">7</span><h4>DB Upright Row (Wide)</h4><div class="sets">3x12 | Pull to nipple line</div><span class="equip">8 kg DBs</span><div class="tip">Side delts + traps combo builder.</div></div>
+        </div>
+        <span class="mg mg-tri">Triceps - Horseshoe Cut</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">8</span><h4>Overhead DB Tricep Extension</h4><div class="sets">4x12 | Deep stretch bottom</div><span class="equip">8 kg DB (single, both arms)</span><div class="tip">Long head focus. Stretch fully, press explosive.</div></div>
+          <div class="ex ex-s"><span class="ex-num">9</span><h4>Close-Grip Push-Up + Kickback</h4><div class="sets">3x12 PU + 12 KB each arm</div><span class="equip">BW + 3 kg DBs</span><div class="tip">Squeeze at lockout = horseshoe cut.</div></div>
+          <div class="ex ex-s"><span class="ex-num">10</span><h4>Band Pushdown (Door)</h4><div class="sets">3x20 | Last set: 21s method</div><span class="equip">Resistance Band</span><div class="tip">High rep pump. 7 top + 7 bottom + 7 full.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-card day-2">
+      <div class="day-hdr"><h3><i class="fa-solid fa-hand-back-fist"></i> Day 2 - PULL</h3><span class="day-badge">Back + Biceps + Traps</span></div>
+      <div class="day-body">
+        <span class="mg mg-back">Back - V-Taper Width + Thickness</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">1</span><h4>Bent-Over Row (Overhand Wide)</h4><div class="sets">4x12 | Squeeze lats 2 sec</div><span class="equip">8 kg DBs</span><div class="tip">Pull to lower chest. Overhand = upper back width.</div></div>
+          <div class="ex ex-s"><span class="ex-num">2</span><h4>Single Arm Row (Underhand)</h4><div class="sets">4x12 each | 4 sec negative</div><span class="equip">8 kg DB + Block</span><div class="tip">Pull to hip. Underhand = max lat stretch. V-shape.</div></div>
+          <div class="ex ex-s"><span class="ex-num">3</span><h4>Band Lat Pulldown (Over Door)</h4><div class="sets">4x15 | Peak contraction</div><span class="equip">Resistance Band</span><div class="tip">Squeeze shoulder blades. Hold 2 sec bottom.</div></div>
+          <div class="ex ex-s"><span class="ex-num">4</span><h4>DB Pullover (Floor)</h4><div class="sets">3x15 | Deep overhead stretch</div><span class="equip">8 kg DB + Mat</span><div class="tip">Rib cage expansion + lats + serratus. Athletic torso.</div></div>
+          <div class="ex ex-s"><span class="ex-num">5</span><h4>Reverse Snow Angels</h4><div class="sets">3x12 | Hold top 3 sec</div><span class="equip">Mat + 3 kg DBs</span><div class="tip">Lower back Christmas tree cut. Rear detail.</div></div>
+        </div>
+        <span class="mg mg-trap">Traps - Thick Slope</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">6</span><h4>DB Shrugs (3 sec hold top)</h4><div class="sets">4x15 | Squeeze ears</div><span class="equip">8 kg DBs</span><div class="tip">Hold 3 sec every rep. Trap thickness builder.</div></div>
+          <div class="ex ex-s"><span class="ex-num">7</span><h4>Farmer's Hold (In Place)</h4><div class="sets">3x45 sec | Shrug up slightly</div><span class="equip">8 kg DBs</span><div class="tip">Grip + traps + forearm vascularity.</div></div>
+        </div>
+        <span class="mg mg-bi">Biceps - Peak & Veins</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">8</span><h4>DB Curl (Standing, Supinated)</h4><div class="sets">4x12 | 21s on last set</div><span class="equip">8 kg DBs</span><div class="tip">Full supination top. 4 sec negative.</div></div>
+          <div class="ex ex-s"><span class="ex-num">9</span><h4>Hammer Curls (Cross-Body)</h4><div class="sets">3x12 each | Squeeze peak</div><span class="equip">8 kg DBs</span><div class="tip">Brachialis = arm width from front.</div></div>
+          <div class="ex ex-s"><span class="ex-num">10</span><h4>Band Curl (Constant Tension)</h4><div class="sets">3x20 | Never straighten arm</div><span class="equip">Resistance Band</span><div class="tip">No rest at bottom. Max blood flow = veins pop.</div></div>
+          <div class="ex ex-s"><span class="ex-num">11</span><h4>Concentration Curl (Seated)</h4><div class="sets">3x10 each | Slow strict</div><span class="equip">3 kg DB + Block</span><div class="tip">Arnold's favorite. Pure peak shape.</div></div>
+        </div>
+        <span class="mg mg-fore">Forearms - Veins</span>
+        <div class="ex-grid">
+          <div class="ex ex-s ex-full"><span class="ex-num">12</span><h4>Wrist Curls + Reverse Wrist Curls</h4><div class="sets">3x20 each direction | Hold 1 sec top</div><span class="equip">3 kg DBs</span><div class="tip">Builds visible forearm veins within weeks.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-card day-3">
+      <div class="day-hdr"><h3><i class="fa-solid fa-bolt-lightning"></i> Day 3 - LEGS + ABS</h3><span class="day-badge">Quads + Hams + Glutes + V-Cut</span></div>
+      <div class="day-body">
+        <span class="mg mg-quad">Quads - Teardrop & Sweep</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">1</span><h4>Goblet Squat (Deep ATG)</h4><div class="sets">4x15 | Pause 2 sec bottom</div><span class="equip">8 kg KB (goblet)</span><div class="tip">Deep as possible. Quad sweep + inner thigh.</div></div>
+          <div class="ex ex-s"><span class="ex-num">2</span><h4>Bulgarian Split Squat</h4><div class="sets">4x12 each | 3 sec negative</div><span class="equip">8 kg DBs + Block</span><div class="tip">King of quads. Teardrop shape builder.</div></div>
+          <div class="ex ex-s"><span class="ex-num">3</span><h4>Sissy Squat (Balance on Block)</h4><div class="sets">3x12 | Lean back, knees forward</div><span class="equip">BW + Block</span><div class="tip">Pure quad isolation. Above-knee cut.</div></div>
+          <div class="ex ex-s"><span class="ex-num">4</span><h4>Wall Sit (Weighted)</h4><div class="sets">3x45-60 sec hold</div><span class="equip">8 kg DB on lap</span><div class="tip">Isometric burn. Deep quad cuts.</div></div>
+        </div>
+        <span class="mg mg-ham">Hamstrings + Glutes</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">5</span><h4>Romanian Deadlift (Stiff Leg)</h4><div class="sets">4x12 | Deep stretch</div><span class="equip">8 kg DBs</span><div class="tip">Ham-glute tie-in cut. Keep legs straight.</div></div>
+          <div class="ex ex-c"><span class="ex-num">6</span><h4>KB Swing (Explosive Hip)</h4><div class="sets">4x20 | Squeeze glutes top</div><span class="equip">8 kg Kettlebell</span><div class="tip">Explosive. Burns fat + builds glutes.</div></div>
+          <div class="ex ex-s"><span class="ex-num">7</span><h4>Glute Bridge (Banded + Weighted)</h4><div class="sets">4x15 | 3 sec squeeze top</div><span class="equip">Band + 8 kg DB</span><div class="tip">Push knees out. Round glute builder.</div></div>
+          <div class="ex ex-s"><span class="ex-num">8</span><h4>Single Leg Deadlift</h4><div class="sets">3x10 each leg</div><span class="equip">8 kg Kettlebell</span><div class="tip">Balance + hamstring separation line.</div></div>
+        </div>
+        <span class="mg mg-calf">Calves - Diamond</span>
+        <div class="ex-grid">
+          <div class="ex ex-s ex-full"><span class="ex-num">9</span><h4>Calf Raises (Block Edge, Weighted)</h4><div class="sets">4x20 | Full stretch, 2 sec top | Alternate toes in/out</div><span class="equip">8 kg DBs + Yoga Block</span></div>
+        </div>
+        <span class="mg mg-core">Abs - V-Cut + 6-Pack + Serratus</span>
+        <div class="ex-grid">
+          <div class="ex ex-co"><span class="ex-num">10</span><h4>Straight Leg Raises</h4><div class="sets">4x15 | Don't touch floor</div><span class="equip">Mat</span><div class="tip">Lower abs + V-cut builder.</div></div>
+          <div class="ex ex-co"><span class="ex-num">11</span><h4>Bicycle Crunches (Slow)</h4><div class="sets">4x20 each | 2 sec hold twist</div><span class="equip">Mat</span><div class="tip">Obliques + serratus. Side cuts.</div></div>
+          <div class="ex ex-co"><span class="ex-num">12</span><h4>Weighted Crunches (Ball on Chest)</h4><div class="sets">3x20 | Squeeze top</div><span class="equip">3 kg Slam Ball</span><div class="tip">Ab thickness so they pop out.</div></div>
+          <div class="ex ex-co"><span class="ex-num">13</span><h4>Plank Saw + Rev Crunch to Hip Lift</h4><div class="sets">3x30 sec + 3x12 reps</div><span class="equip">Mat</span><div class="tip">Deep core + V-cut lines carved.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-card day-4">
+      <div class="day-hdr"><h3><i class="fa-solid fa-star"></i> Day 4 - PUSH (Shoulder Focus)</h3><span class="day-badge">3D Delts + Chest + Tri</span></div>
+      <div class="day-body">
+        <span class="mg mg-sh">Shoulders - Volume for Round Caps</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">1</span><h4>Arnold Press (Seated)</h4><div class="sets">4x10 | Full rotation slow</div><span class="equip">8 kg DBs + Block</span><div class="tip">All 3 delt heads in one. Signature builder.</div></div>
+          <div class="ex ex-s"><span class="ex-num">2</span><h4>Lateral Raise 1.5 Reps</h4><div class="sets">4x10 (half up, full up, down)</div><span class="equip">3 kg DBs</span><div class="tip">Double time under tension. Cannonball delts.</div></div>
+          <div class="ex ex-s"><span class="ex-num">3</span><h4>Front to Lateral Raise Combo</h4><div class="sets">3x10 each direction</div><span class="equip">3 kg DBs</span><div class="tip">Continuous: front > hold > side > lower. Killer.</div></div>
+          <div class="ex ex-s"><span class="ex-num">4</span><h4>Bent Rear Delt Fly (on Block)</h4><div class="sets">4x15 | Pinch blades</div><span class="equip">3 kg DBs + Block</span><div class="tip">Strict form. Round from all angles.</div></div>
+          <div class="ex ex-s"><span class="ex-num">5</span><h4>Band Lateral Raise (Burnout)</h4><div class="sets">3 sets to FAILURE</div><span class="equip">Resistance Band</span><div class="tip">Final burnout. Go until arms won't lift.</div></div>
+        </div>
+        <span class="mg mg-chest">Chest - Angles</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">6</span><h4>Wide Push-Ups (5 sec negative)</h4><div class="sets">3x15 | 5 sec lowering</div><span class="equip">Mat</span><div class="tip">Chest-shoulder separation line.</div></div>
+          <div class="ex ex-s"><span class="ex-num">7</span><h4>Svend Press (Squeeze DBs)</h4><div class="sets">3x15 | Press together hard</div><span class="equip">3 kg DBs</span><div class="tip">Inner chest tension. Center chest line.</div></div>
+        </div>
+        <span class="mg mg-tri">Triceps - Long Head</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">8</span><h4>Skull Crushers (Floor)</h4><div class="sets">4x12 | Lower to temples</div><span class="equip">8 kg DBs + Mat</span><div class="tip">Long head target. Elbows angled back.</div></div>
+          <div class="ex ex-s"><span class="ex-num">9</span><h4>Bench Dips (Hands on Block)</h4><div class="sets">3x15 + slam ball on lap</div><span class="equip">Block + 3 kg Ball</span><div class="tip">Deep for full tricep stretch. Weighted.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day-card day-5">
+      <div class="day-hdr"><h3><i class="fa-solid fa-hand-back-fist"></i> Day 5 - PULL (Arms+Back)</h3><span class="day-badge">Vascularity + Pump Day</span></div>
+      <div class="day-body">
+        <span class="mg mg-back">Back - Width & Detail</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">1</span><h4>DB Deadlift (Full Range)</h4><div class="sets">4x12 | Posterior chain</div><span class="equip">8 kg DBs</span><div class="tip">Erectors + traps + glutes. Thick back.</div></div>
+          <div class="ex ex-s"><span class="ex-num">2</span><h4>Prone Y-T-W Raises</h4><div class="sets">3x10 each letter | 3 sec hold</div><span class="equip">3 kg DBs + Mat</span><div class="tip">Y=lower traps, T=mid, W=rotator cuff.</div></div>
+          <div class="ex ex-s"><span class="ex-num">3</span><h4>Renegade Rows (Plank)</h4><div class="sets">3x10 each | No hip rotation</div><span class="equip">8 kg DBs</span><div class="tip">Back + core stability. Dense functional look.</div></div>
+          <div class="ex ex-s"><span class="ex-num">4</span><h4>Band Straight Arm Pulldown</h4><div class="sets">3x20 | Squeeze lats</div><span class="equip">Resistance Band (door)</span><div class="tip">Lat isolation. Width under armpits.</div></div>
+        </div>
+        <span class="mg mg-trap">Traps + Rear Delts</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">5</span><h4>Shrug + Row Combo (Shrow)</h4><div class="sets">3x12 | Shrug then row</div><span class="equip">8 kg DBs</span><div class="tip">Traps + upper back combined.</div></div>
+          <div class="ex ex-s"><span class="ex-num">6</span><h4>Band Face Pull (High)</h4><div class="sets">4x20 | Pull to forehead</div><span class="equip">Resistance Band</span><div class="tip">3D look from behind.</div></div>
+        </div>
+        <span class="mg mg-bi">Arms - PUMP (High Volume)</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">7</span><h4>Alternating Curl (Twist Top)</h4><div class="sets">4x10 each | 2 sec squeeze</div><span class="equip">8 kg DBs</span><div class="tip">Supinate hard. Bicep peak separation.</div></div>
+          <div class="ex ex-s"><span class="ex-num">8</span><h4>Spider Curl (Lean Over Block)</h4><div class="sets">3x12 | No swing</div><span class="equip">3 kg DBs + Block</span><div class="tip">Gravity fights you. Ultimate peak builder.</div></div>
+          <div class="ex ex-s"><span class="ex-num">9</span><h4>Hammer + Reverse Curl SS</h4><div class="sets">3x12+12 (no rest)</div><span class="equip">3 kg DBs</span><div class="tip">Hammer=width. Reverse=forearm veins.</div></div>
+          <div class="ex ex-s"><span class="ex-num">10</span><h4>OH Tri Ext + Kickback SS</h4><div class="sets">3x12+12 each arm</div><span class="equip">3 kg DBs</span><div class="tip">Long head + lateral head = full horseshoe.</div></div>
+        </div>
+        <span class="mg mg-fore">Forearms - Vein Builder</span>
+        <div class="ex-grid">
+          <div class="ex ex-s ex-full"><span class="ex-num">11</span><h4>Towel Wrist Roller (Wrap DB)</h4><div class="sets">3 sets roll up + down</div><span class="equip">3 kg DB + Towel</span><div class="tip">Best forearm vein exercise. Pump = veins visible in days.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div class="day-card day-6">
+      <div class="day-hdr"><h3><i class="fa-solid fa-bolt"></i> Day 6 - LEGS + HIIT</h3><span class="day-badge">Heavy Lower + Fat Destroyer</span></div>
+      <div class="day-body">
+        <span class="mg mg-quad">Legs - Heavy</span>
+        <div class="ex-grid">
+          <div class="ex ex-s"><span class="ex-num">1</span><h4>Sumo Squat (Wide, Inner Thigh)</h4><div class="sets">4x15 | Squeeze adductors</div><span class="equip">8 kg DB (center)</span><div class="tip">Inner thigh separation line.</div></div>
+          <div class="ex ex-c"><span class="ex-num">2</span><h4>Jump Squat (Explosive)</h4><div class="sets">4x12 | Deep, explode up</div><span class="equip">Bodyweight</span><div class="tip">Fast-twitch fibers. Dense athletic quad.</div></div>
+          <div class="ex ex-s"><span class="ex-num">3</span><h4>KB Reverse Lunge</h4><div class="sets">3x12 each leg</div><span class="equip">8 kg Kettlebell</span><div class="tip">Step back = more glute-ham tie-in.</div></div>
+          <div class="ex ex-s"><span class="ex-num">4</span><h4>Single Leg Glute Bridge</h4><div class="sets">3x15 each | 3 sec top</div><span class="equip">Mat</span><div class="tip">Round symmetrical glute shape.</div></div>
+          <div class="ex ex-s"><span class="ex-num">5</span><h4>Nordic Curl Negative</h4><div class="sets">3x6-8 | Lower SLOW</div><span class="equip">Mat (anchor feet)</span><div class="tip">Best hamstring builder. No equipment needed.</div></div>
+        </div>
+        <span class="mg mg-core">Abs - V-Cut Finisher</span>
+        <div class="ex-grid">
+          <div class="ex ex-co"><span class="ex-num">6</span><h4>Leg Raise + Hip Lift</h4><div class="sets">4x15 | Hips UP at top</div><span class="equip">Mat</span><div class="tip">Hip lift = V-cut lines deep.</div></div>
+          <div class="ex ex-co"><span class="ex-num">7</span><h4>Woodchoppers (Low>High)</h4><div class="sets">3x12 each side</div><span class="equip">3 kg Slam Ball</span><div class="tip">Diagonal oblique lines framing abs.</div></div>
+          <div class="ex ex-co"><span class="ex-num">8</span><h4>Ab Rollout (DB as Wheel)</h4><div class="sets">3x10 | Slow, controlled</div><span class="equip">8 kg DBs or Walkout</span><div class="tip">Core + serratus. Full stretch.</div></div>
+        </div>
+        <span class="mg mg-cardio">HIIT Finisher - 10 Min Fat Destroyer</span>
+        <div class="ex-grid">
+          <div class="ex ex-c"><span class="ex-num">F1</span><h4>Slam Ball Slams x15</h4><div class="sets">NO REST BETWEEN - 3 ROUNDS</div><span class="equip">3 kg Ball</span></div>
+          <div class="ex ex-c"><span class="ex-num">F2</span><h4>KB Swings x20</h4><div class="sets">60 sec rest between rounds</div><span class="equip">8 kg KB</span></div>
+          <div class="ex ex-c"><span class="ex-num">F3</span><h4>Mountain Climbers 30s</h4><div class="sets"></div><span class="equip">Bodyweight</span></div>
+          <div class="ex ex-c"><span class="ex-num">F4</span><h4>Burpees (No Jump) x10</h4><div class="sets"></div><span class="equip">Bodyweight</span></div>
+          <div class="ex ex-c"><span class="ex-num">F5</span><h4>DB Thrusters x12</h4><div class="sets"></div><span class="equip">3 kg DBs</span></div>
+        </div>
+        <div class="note" style="margin-top:12px"><b>Burns 150+ cal.</b> Metabolism elevated 24 hrs (EPOC). This is where fat melts.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MACROS -->
+  <div class="sec">
+    <div class="sec-h"><div class="dot bg-sun"><i class="fa-solid fa-chart-pie"></i></div>
+      <div><h2>Daily <span class="hl">Targets</span></h2><div class="sub">500 cal deficit = 0.8-1 kg fat loss/week while preserving muscle. Protein at 1.4g/kg.</div></div>
+    </div>
+    <div class="macros">
+      <div class="mc cal"><div class="big">1650</div><div class="lbl">Calories</div></div>
+      <div class="mc pro"><div class="big">120g</div><div class="lbl">Protein</div></div>
+      <div class="mc carb"><div class="big">183g</div><div class="lbl">Carbs</div></div>
+      <div class="mc fat"><div class="big">37g</div><div class="lbl">Fat</div></div>
+      <div class="mc fib"><div class="big">30g</div><div class="lbl">Fibre</div></div>
+    </div>
+  </div>
+
+  <!-- DIET -->
+  <div class="sec">
+    <div class="sec-h"><div class="dot bg-teal"><i class="fa-solid fa-bowl-food"></i></div>
+      <div><h2>Daily <span class="hl">Diet</span> Plan</h2><div class="sub">~1650 cal | 120g protein | Cholesterol-safe | Indian vegetarian + eggs</div></div>
+    </div>
+    <div class="meal"><div class="time"><i class="fa-solid fa-mug-hot"></i><div class="tt">6 AM</div></div>
+      <div class="c"><h4>Methi + Lemon + ACV Water</h4><p>Warm water + lemon + 1 tsp ACV + soaked methi + cinnamon.</p><div class="macro">Fat burning + cholesterol control</div></div></div>
+    <div class="meal"><div class="time"><i class="fa-solid fa-sun"></i><div class="tt">7 AM</div></div>
+      <div class="c"><h4>Protein Bomb Breakfast</h4><p>4 egg whites + 1 whole egg omelet w/ spinach OR moong dal chilla (2) + paneer + oats with flaxseed.</p><div class="macro">P: 30g | C: 40g | F: 8g</div></div></div>
+    <div class="meal"><div class="time"><i class="fa-solid fa-apple-whole"></i><div class="tt">10 AM</div></div>
+      <div class="c"><h4>Greek Yogurt + Nuts</h4><p>200g low-fat curd + 10 almonds + 3 walnuts + amla (Vit C + cholesterol).</p><div class="macro">P: 12g | C: 15g | F: 7g</div></div></div>
+    <div class="meal"><div class="time"><i class="fa-solid fa-utensils"></i><div class="tt">1 PM</div></div>
+      <div class="c"><h4>Dal + Rice + Sabzi + Salad</h4><p>1.5 katori dal + brown rice/2 roti + palak paneer or soy chunk curry + raw salad + flaxseed powder.</p><div class="macro">P: 25g | C: 50g | F: 8g</div></div></div>
+    <div class="meal"><div class="time"><i class="fa-solid fa-bolt"></i><div class="tt">4 PM</div></div>
+      <div class="c"><h4>Pre-Workout: Banana + Black Coffee</h4><p>1 banana + black coffee (fat burn +30%). Heavy day: add 2 egg whites.</p><div class="macro">P: 8g | C: 25g | F: 0g</div></div></div>
+    <div class="meal"><div class="time"><i class="fa-solid fa-dumbbell"></i><div class="tt">6:30 PM</div></div>
+      <div class="c"><h4>Post-Workout: Whey / Paneer / Sattu</h4><p>1 scoop whey in water OR 150g paneer bhurji + bread OR sattu shake + 2 egg whites.</p><div class="macro">P: 28g | C: 20g | F: 4g</div></div></div>
+    <div class="meal"><div class="time"><i class="fa-solid fa-moon"></i><div class="tt">8:30 PM</div></div>
+      <div class="c"><h4>Light Protein-Dense Dinner</h4><p>Tofu tikka + salad OR soy stir-fry + dal OR egg white bhurji + besan chilla. No rice at night.</p><div class="macro">P: 25g | C: 25g | F: 6g</div></div></div>
+    <div class="meal"><div class="time"><i class="fa-solid fa-bed"></i><div class="tt">10 PM</div></div>
+      <div class="c"><h4>Turmeric Milk</h4><p>Toned milk + haldi + pepper. Slow protein feeds muscles overnight. Skin repair.</p><div class="macro">P: 12g | C: 8g | F: 4g</div></div></div>
+  </div>
+
+  <!-- PROTOCOLS -->
+  <div class="sec">
+    <div class="sec-h"><div class="dot bg-grape"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div><h2>Health <span class="hl">Protocols</span></h2><div class="sub">Cholesterol, skin health and supplements</div></div>
+    </div>
+    <div class="cols">
+      <div class="col chol"><h3><i class="fa-solid fa-heart"></i> High Cholesterol Protocol</h3>
+        <ul><li>Morning methi + ACV, reduces LDL 15-20% in 8 weeks</li><li>Oats daily, beta-glucan binds cholesterol</li><li>Flaxseeds 2 tbsp, omega-3 lowers triglycerides</li><li>Walnuts 3-4 daily, raises HDL</li><li>Garlic in meals, natural statin effect</li><li>Zero trans fat, no packaged/fried, no vanaspati</li><li>Mustard oil or olive oil only, max 2 tsp/day</li><li>Max 4 whole eggs/week, unlimited whites</li><li>Isabgol 1 tsp before bed, binds cholesterol</li></ul></div>
+      <div class="col skin"><h3><i class="fa-solid fa-face-smile"></i> Skin Health Protocol</h3>
+        <ul><li>4L water per day</li><li>Amla + lemon (Vitamin C)</li><li>Flaxseed (Omega-3)</li><li>Carrot + beetroot juice 3x/week</li><li>7-8 hrs sleep</li><li>SPF 30+ daily</li><li>Turmeric milk (anti-aging)</li><li>Pumpkin seeds (zinc)</li></ul></div>
+      <div class="col supp"><h3><i class="fa-solid fa-pills"></i> Supplements</h3>
+        <ul><li>Whey Protein, 1 scoop post-workout</li><li>Creatine, 5g daily (muscle fullness)</li><li>Omega-3, 1000mg flaxseed oil</li><li>Vitamin D3, 2000 IU daily</li><li>Multivitamin, 1 after breakfast</li><li>Isabgol, 1 tsp before bed</li></ul></div>
+    </div>
+  </div>
+
+  <!-- EXPECTED RESULTS -->
+  <div class="sec">
+    <div class="sec-h"><div class="dot bg-coral"><i class="fa-solid fa-chart-line"></i></div>
+      <div><h2>Expected <span class="hl">Results</span> Timeline</h2><div class="sub">What happens when you stay consistent</div></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-row"><div class="wk">Week 2</div><div class="wt">82.5 kg</div><div class="desc">Bloating gone, energy up, muscles fuller</div></div>
+      <div class="tl-row"><div class="wk">Week 4</div><div class="wt">80 kg</div><div class="desc">Shoulders showing, arms tighter, face slim</div></div>
+      <div class="tl-row"><div class="wk">Week 6</div><div class="wt">77 kg</div><div class="desc">Bicep veins, upper abs visible, V-taper forming</div></div>
+      <div class="tl-row"><div class="wk">Week 8</div><div class="wt">74 kg</div><div class="desc">6-pack emerging, shoulder striations, arm cuts</div></div>
+      <div class="tl-row"><div class="wk">Week 10</div><div class="wt">72 kg</div><div class="desc">V-cut visible, quad sweep, forearm veins pop</div></div>
+      <div class="tl-row"><div class="wk">Week 12</div><div class="wt">70 kg</div><div class="desc">GOAL. Athletic movie-star physique. All cuts visible.</div></div>
+    </div>
+  </div>
+
+  <!-- 10 RULES -->
+  <div class="sec">
+    <div class="sec-h"><div class="dot bg-teal"><i class="fa-solid fa-list-ol"></i></div>
+      <div><h2>10 Rules for <span class="hl">Movie-Star</span> Body</h2></div>
+    </div>
+    <div class="rules">
+      <div class="rule"><div class="rn">1</div><div class="rt">Mind-Muscle</div><div class="rd">Feel every rep. Close eyes, squeeze, hold. Quality over quantity.</div></div>
+      <div class="rule"><div class="rn">2</div><div class="rt">Never Skip Legs</div><div class="rd">Most testosterone release. Skip legs = slow upper body.</div></div>
+      <div class="rule"><div class="rn">3</div><div class="rt">Protein Every 3h</div><div class="rd">5-6 small meals keep muscle synthesis elevated all day.</div></div>
+      <div class="rule"><div class="rn">4</div><div class="rt">Progressive Overload</div><div class="rd">Add 1-2 reps or 1 set every week. No progress = no growth.</div></div>
+      <div class="rule"><div class="rn">5</div><div class="rt">Sleep = Growth</div><div class="rd">95% repair in deep sleep. 7-8 hours min. No phone before bed.</div></div>
+      <div class="rule"><div class="rn">6</div><div class="rt">Zero Alcohol/Junk</div><div class="rd">Alcohol kills testosterone 72 hrs. One beer undoes 3 days diet.</div></div>
+      <div class="rule"><div class="rn">7</div><div class="rt">10K Steps Daily</div><div class="rd">Burns 300-500 extra cal without eating into recovery.</div></div>
+      <div class="rule"><div class="rn">8</div><div class="rt">Progress Photos</div><div class="rd">Same light, angle, time every 2 weeks. Mirror lies, photos don't.</div></div>
+      <div class="rule"><div class="rn">9</div><div class="rt">Train to Failure</div><div class="rd">Last 2-3 reps where it burns are the ONLY ones that grow muscle.</div></div>
+      <div class="rule"><div class="rn">10</div><div class="rt">Trust the Process</div><div class="rd">Wk 1-3: hard. Wk 4: signs. Wk 8: others notice. Wk 12: new you.</div></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <b>Consult a doctor before starting. Get lipid panel at Week 6 and 12.</b>
+    <div class="quote">"The body you want is on the other side of the pain you refuse to feel."</div>
+    <div class="disc">Male, 34, 85 kg, 5'7", Vegetarian+Eggs, Home Workout Only, High Cholesterol</div>
+  </div>
+
+</div>
+</body>
+</html>
